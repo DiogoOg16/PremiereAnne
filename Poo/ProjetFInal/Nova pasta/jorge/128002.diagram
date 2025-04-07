@@ -1,0 +1,67 @@
+format 224
+
+classcanvas 128002 class_ref 128002 // Horloge
+  simpleclassdiagramsettings end
+  xyz 74 234 2000
+end
+classcanvas 128130 class_ref 128130 // Module_de_chauffe
+  simpleclassdiagramsettings end
+  xyz 716 294 2000
+end
+classcanvas 128258 class_ref 128258 // CapteurTemperature
+  simpleclassdiagramsettings end
+  xyz 237 458 2000
+end
+usecasecanvas 128386 usecase_ref 128002 // Afficher la temperature
+  xyzwh 361 270 3005 163 105 label_xy 373 313
+end
+usecasecanvas 128514 usecase_ref 128130 // Arreter le module de chauffe
+  xyzwh 537 44 3005 193 93 label_xy 558 78
+end
+usecasecanvas 128642 usecase_ref 128258 // Démarrer le module de chauffehauffe
+  xyzwh 437 476 3005 253 85 label_xy 453 506
+end
+classcanvas 131202 class_ref 128386 // Utilisateur
+  simpleclassdiagramsettings end
+  xyz 92 494 2000
+end
+usecasecanvas 131842 usecase_ref 128642 // Démarrer le Sleep Mode
+  xyzwh 316 60 3005 177 113 label_xy 333 110
+end
+usecasecanvas 132098 usecase_ref 128770 // Definir Sleep Mode Time
+  xyzwh 28 315 3005 157 91 label_xy 31 354
+end
+usecasecanvas 132482 usecase_ref 128898 // Régler la temperature de Ref
+  xyzwh 32 663 3005 215 99 label_xy 49 702
+end
+usecasecanvas 132994 usecase_ref 129026 // Afficher l'historique de la temperature
+  xyzwh 271 627 3005 233 87 label_xy 281 662
+end
+usecasecanvas 133250 usecase_ref 129154 // Changer la couleur de fond
+  xyzwh 19 40 3005 197 97 label_xy 27 82
+end
+line 128770 --->
+  from ref 128002 z 3006 to ref 128386
+line 128898 --->
+  from ref 128386 z 3006 to ref 128258
+simplerelationcanvas 129666 simplerelation_ref 128386
+  from ref 128514 z 3006 stereotype "<<extend>>" xyz 502.5 202.5 3000 to ref 128386
+end
+simplerelationcanvas 129794 simplerelation_ref 128514
+  from ref 128642 z 3006 stereotype "<<extend>>" xyz 469 424.5 3000 to ref 128386
+end
+line 130946 --->
+  from ref 128514 z 3006 to ref 128130
+line 131074 --->
+  from ref 128642 z 3006 to ref 128130
+line 131970 --->
+  from ref 128002 z 3006 to ref 131842
+line 132226 --->
+  from ref 131202 z 3006 to ref 132098
+line 132738 --->
+  from ref 131202 z 3006 to ref 132482
+line 133122 --->
+  from ref 131202 z 3006 to ref 132994
+line 133378 --->
+  from ref 128002 z 3006 to ref 133250
+end
